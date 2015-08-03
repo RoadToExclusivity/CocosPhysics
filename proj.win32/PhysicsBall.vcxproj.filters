@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scenes">
+      <UniqueIdentifier>{2d61f976-1312-4071-97e6-8f6e40007b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppeteers">
+      <UniqueIdentifier>{a50840d4-1c9d-4b19-b9b2-1284a9b597a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\physics">
+      <UniqueIdentifier>{19fb3075-0332-4699-88bd-c6ba6c9c76f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\delegate">
+      <UniqueIdentifier>{24447539-c4b1-4e46-8945-c13662a04bf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets">
+      <UniqueIdentifier>{6c5e484b-d712-4bd8-afac-58a2e415531c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\commands">
+      <UniqueIdentifier>{705f17a5-4dd5-4ce0-b1b0-0cd4c7d5c494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\terrain">
+      <UniqueIdentifier>{aaf90311-e7d4-4e1c-94ad-f5db69d6fa6c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="BallScene.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="NodePhysicsPuppeteer.cpp">
+      <Filter>src\puppeteers</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsPuppeteer.cpp">
+      <Filter>src\puppeteers</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsContactsListener.cpp">
+      <Filter>src\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsEngine.cpp">
+      <Filter>src\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src\delegate</Filter>
+    </ClCompile>
+    <ClCompile Include="BallPuppet.cpp">
+      <Filter>src\puppets</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundPuppet.cpp">
+      <Filter>src\puppets</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainCommand.cpp">
+      <Filter>src\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSegment.cpp">
+      <Filter>src\puppets\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSegmentData.cpp">
+      <Filter>src\puppets\terrain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="BallScene.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="NodePhysicsPuppeteer.h">
+      <Filter>src\puppeteers</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsPuppeteer.h">
+      <Filter>src\puppeteers</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsEngine.h">
+      <Filter>src\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsContactsListener.h">
+      <Filter>src\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectPuppeteers.h">
+      <Filter>src\puppeteers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src\delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectPuppet.h">
+      <Filter>src\puppets</Filter>
+    </ClInclude>
+    <ClInclude Include="BallPuppet.h">
+      <Filter>src\puppets</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundPuppet.h">
+      <Filter>src\puppets</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainCommand.h">
+      <Filter>src\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSegment.h">
+      <Filter>src\puppets\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSegmentData.h">
+      <Filter>src\puppets\terrain</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
