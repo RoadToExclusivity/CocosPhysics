@@ -8,13 +8,15 @@ template <class T, class Puppeteer>
 class SceneObjectPuppet : public cocos2d::Sprite
 {
 public:
-	void SetEngine(PhysicsEngine* engine)
+	virtual void SetEngine(PhysicsEngine* engine)
 	{
 		m_engine = engine;
 	}
 
 	void onEnter() override
 	{
+		cocos2d::Sprite::onEnter();
+
 		if (m_engine)
 		{
 			if (m_puppeteer)
@@ -29,6 +31,13 @@ public:
 	void onExit() override
 	{
 		m_puppeteer.Clear();
+
+		cocos2d::Sprite::onExit();
+	}
+	
+	b2Body* GetBody() const
+	{
+		return m_puppeteer->getBody();
 	}
 
 protected:

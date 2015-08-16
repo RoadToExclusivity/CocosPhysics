@@ -141,34 +141,44 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="BallPuppet.cpp" />
-    <ClCompile Include="BallScene.cpp" />
-    <ClCompile Include="GroundPuppet.cpp" />
+    <ClCompile Include="..\Classes\BallPuppet.cpp" />
+    <ClCompile Include="..\Classes\CarPuppet.cpp" />
+    <ClCompile Include="..\Classes\CarSetup.cpp" />
+    <ClCompile Include="..\Classes\MainScene.cpp" />
+    <ClCompile Include="..\Classes\CarSetupScene.cpp" />
+    <ClCompile Include="..\Classes\GroundPuppet.cpp" />
+    <ClCompile Include="..\Classes\NodePhysicsPuppeteer.cpp" />
+    <ClCompile Include="..\Classes\PhysicsContactsListener.cpp" />
+    <ClCompile Include="..\Classes\PhysicsEngine.cpp" />
+    <ClCompile Include="..\Classes\PhysicsPuppeteer.cpp" />
+    <ClCompile Include="..\Classes\SurfaceGenerator.cpp" />
+    <ClCompile Include="..\Classes\TerrainCommand.cpp" />
+    <ClCompile Include="..\Classes\TerrainSegment.cpp" />
+    <ClCompile Include="..\Classes\TerrainSegmentData.cpp" />
+    <ClCompile Include="..\Classes\WheelPuppet.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="NodePhysicsPuppeteer.cpp" />
-    <ClCompile Include="PhysicsContactsListener.cpp" />
-    <ClCompile Include="PhysicsEngine.cpp" />
-    <ClCompile Include="PhysicsPuppeteer.cpp" />
-    <ClCompile Include="TerrainCommand.cpp" />
-    <ClCompile Include="TerrainSegment.cpp" />
-    <ClCompile Include="TerrainSegmentData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="BallPuppet.h" />
-    <ClInclude Include="BallScene.h" />
-    <ClInclude Include="GroundPuppet.h" />
+    <ClInclude Include="..\Classes\BallPuppet.h" />
+    <ClInclude Include="..\Classes\CarPuppet.h" />
+    <ClInclude Include="..\Classes\CarSetup.h" />
+    <ClInclude Include="..\Classes\MainScene.h" />
+    <ClInclude Include="..\Classes\CarSetupScene.h" />
+    <ClInclude Include="..\Classes\GroundPuppet.h" />
+    <ClInclude Include="..\Classes\NodePhysicsPuppeteer.h" />
+    <ClInclude Include="..\Classes\PhysicsContactsListener.h" />
+    <ClInclude Include="..\Classes\PhysicsEngine.h" />
+    <ClInclude Include="..\Classes\PhysicsPuppeteer.h" />
+    <ClInclude Include="..\Classes\Pointer.h" />
+    <ClInclude Include="..\Classes\SceneObjectPuppet.h" />
+    <ClInclude Include="..\Classes\SceneObjectPuppeteers.h" />
+    <ClInclude Include="..\Classes\SurfaceGenerator.h" />
+    <ClInclude Include="..\Classes\TerrainCommand.h" />
+    <ClInclude Include="..\Classes\TerrainSegment.h" />
+    <ClInclude Include="..\Classes\TerrainSegmentData.h" />
+    <ClInclude Include="..\Classes\WheelPuppet.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="NodePhysicsPuppeteer.h" />
-    <ClInclude Include="PhysicsContactsListener.h" />
-    <ClInclude Include="PhysicsEngine.h" />
-    <ClInclude Include="PhysicsPuppeteer.h" />
-    <ClInclude Include="Pointer.h" />
-    <ClInclude Include="SceneObjectPuppet.h" />
-    <ClInclude Include="SceneObjectPuppeteers.h" />
-    <ClInclude Include="TerrainCommand.h" />
-    <ClInclude Include="TerrainSegment.h" />
-    <ClInclude Include="TerrainSegmentData.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">

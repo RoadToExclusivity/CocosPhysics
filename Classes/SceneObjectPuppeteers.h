@@ -1,6 +1,8 @@
 #pragma once
 
 #include "NodePhysicsPuppeteer.h"
+#include "PhysicsEngine.h"
+#include "Pointer.h"
 
 template <typename Parent, typename T, typename ... Types>
 class SceneObjectPuppeteer : public Parent
@@ -24,7 +26,15 @@ class GroundPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, Grou
 {
 };
 
-class TerrainPuppeteer : public SceneObjectPuppeteer < PhysicsPuppeteer, TerrainPuppeteer, const b2BodyDef&, PhysicsEngine*>
+class CarPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, CarPuppeteer, cocos2d::Node*, const b2BodyDef&, PhysicsEngine* >
+{
+};
+
+class WheelPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, WheelPuppeteer, cocos2d::Node*, const b2BodyDef&, PhysicsEngine* >
+{
+};
+
+class TerrainPuppeteer : public SceneObjectPuppeteer < PhysicsPuppeteer, TerrainPuppeteer, b2BodyDef&, PhysicsEngine*>
 {
 public:
 	void didUpdatePhysics(){};

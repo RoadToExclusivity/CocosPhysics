@@ -11,7 +11,7 @@ NodePhysicsPuppeteer *NodePhysicsPuppeteer::create(cocos2d::Node *node, const b2
 
 void NodePhysicsPuppeteer::didUpdatePhysics()
 {
-    m_node->setPosition(getEngine()->getBodyPosition(getBody()));
+    m_node->setPosition(m_node->getParent()->convertToNodeSpace(getEngine()->getBodyPosition(getBody())));
     m_node->setRotation(getEngine()->getBodyRotation(getBody()));
 }
 
@@ -30,7 +30,7 @@ void NodePhysicsPuppeteer::init(cocos2d::Node *node, const b2BodyDef &bodyDef, P
     m_node = node;
 }
 
-cocos2d::CCNode *NodePhysicsPuppeteer::getNode() const
+cocos2d::Node *NodePhysicsPuppeteer::getNode() const
 {
     return m_node;
 }

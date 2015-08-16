@@ -14,9 +14,6 @@ public:
 	void execute();
 
 private:
-	void applyRenderState();
-	void restoreRenderState();
-
 	GLuint _textureID;
 	cocos2d::GLProgramState* _glProgramState = nullptr;
 	cocos2d::BlendFunc _blendType;
@@ -26,18 +23,6 @@ private:
 	GLuint _vertexBuffer;
 	size_t _vertexCount;
 
-	// ModelView transform
 	cocos2d::Mat4 _mv;
-
-	bool _cullFaceEnabled;
-	GLenum _cullFace;
-	bool _depthTestEnabled;
-	bool _depthWriteEnabled;
-	bool _forceDepthWrite;
-
-	bool _renderStateCullFaceEnabled;
-	bool _renderStateDepthTest;
-	GLboolean _renderStateDepthWrite;
-	GLenum    _renderStateCullFace;
 };
 

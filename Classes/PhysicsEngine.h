@@ -25,7 +25,7 @@ public:
     b2Vec2 getNodePointPosition(cocos2d::Node *node, const cocos2d::Point &point) const;
 
 private:
-    b2World *mWorld;
+	b2World *mWorld;
     std::set<b2Body *> mBodiesToDelete;
     int mPixelsPerMeter;
 	cocos2d::Layer *m_parent = nullptr;

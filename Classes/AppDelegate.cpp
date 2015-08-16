@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
-#include "proj.win32\BallScene.h"
+#include "MainScene.h"
+#include "CarSetupScene.h"
 
 USING_NS_CC;
 
@@ -47,7 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-	auto scene = BallScene::createScene();
+	auto scene = CarSetupScene::createScene();
 
     // run
     director->runWithScene(scene);

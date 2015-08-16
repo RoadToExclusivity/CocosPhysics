@@ -98,7 +98,7 @@ b2Vec2 PhysicsEngine::getNodePointPosition(Node *node, const Point &point) const
 {
 	AffineTransform transform = AffineTransformIdentity;
     for (;;) {
-        AffineTransform next = node->nodeToParentTransform();
+        AffineTransform next = node->getNodeToParentAffineTransform();
         transform = AffineTransformConcat(transform, next);
         node = node->getParent();
         CCAssert(node, "Node is out of Box2D world: physics layer is not parent of this node.");

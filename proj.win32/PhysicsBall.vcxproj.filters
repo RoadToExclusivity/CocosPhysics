@@ -28,93 +28,153 @@
     <Filter Include="src\commands">
       <UniqueIdentifier>{705f17a5-4dd5-4ce0-b1b0-0cd4c7d5c494}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\puppets\terrain">
+    <Filter Include="src\physics\engine">
+      <UniqueIdentifier>{26e95d84-5326-4181-9c7a-7cd49fd411a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\physics\listener">
+      <UniqueIdentifier>{fdd7e20f-4c3b-4318-be83-33f17c3bbc78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppeteers\physics">
+      <UniqueIdentifier>{16195869-8fa5-4a71-91f2-149d477f46ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppeteers\node physics">
+      <UniqueIdentifier>{029fd356-85a2-4343-afd9-846ee6231693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\terrain segment">
       <UniqueIdentifier>{aaf90311-e7d4-4e1c-94ad-f5db69d6fa6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\ball">
+      <UniqueIdentifier>{3590cc66-c347-4551-8ace-ca223e902b9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\ground">
+      <UniqueIdentifier>{4b369a6d-669c-4679-b1dc-8766f533bfd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\terrain segment\generator">
+      <UniqueIdentifier>{88c9c827-0d4d-419e-8c06-2b88ccd9b628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\car">
+      <UniqueIdentifier>{952b1275-155e-4896-92cd-393cac4f5780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scenes\car setup">
+      <UniqueIdentifier>{30c17f20-3983-41ab-96ef-6cb63088b8ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\wheel">
+      <UniqueIdentifier>{de78db24-18fa-4f3c-8c6b-4cc0edc1e3f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="BallScene.cpp">
-      <Filter>src\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="NodePhysicsPuppeteer.cpp">
-      <Filter>src\puppeteers</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsPuppeteer.cpp">
-      <Filter>src\puppeteers</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsContactsListener.cpp">
-      <Filter>src\physics</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsEngine.cpp">
-      <Filter>src\physics</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src\delegate</Filter>
     </ClCompile>
-    <ClCompile Include="BallPuppet.cpp">
-      <Filter>src\puppets</Filter>
-    </ClCompile>
-    <ClCompile Include="GroundPuppet.cpp">
-      <Filter>src\puppets</Filter>
-    </ClCompile>
-    <ClCompile Include="TerrainCommand.cpp">
+    <ClCompile Include="..\Classes\TerrainCommand.cpp">
       <Filter>src\commands</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainSegment.cpp">
-      <Filter>src\puppets\terrain</Filter>
+    <ClCompile Include="..\Classes\PhysicsEngine.cpp">
+      <Filter>src\physics\engine</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainSegmentData.cpp">
-      <Filter>src\puppets\terrain</Filter>
+    <ClCompile Include="..\Classes\PhysicsContactsListener.cpp">
+      <Filter>src\physics\listener</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PhysicsPuppeteer.cpp">
+      <Filter>src\puppeteers\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NodePhysicsPuppeteer.cpp">
+      <Filter>src\puppeteers\node physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TerrainSegment.cpp">
+      <Filter>src\puppets\terrain segment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TerrainSegmentData.cpp">
+      <Filter>src\puppets\terrain segment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BallPuppet.cpp">
+      <Filter>src\puppets\ball</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GroundPuppet.cpp">
+      <Filter>src\puppets\ground</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SurfaceGenerator.cpp">
+      <Filter>src\puppets\terrain segment\generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainScene.cpp">
+      <Filter>src\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CarPuppet.cpp">
+      <Filter>src\puppets\car</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CarSetup.cpp">
+      <Filter>src\scenes\car setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CarSetupScene.cpp">
+      <Filter>src\scenes\car setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WheelPuppet.cpp">
+      <Filter>src\puppets\wheel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="BallScene.h">
-      <Filter>src\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="NodePhysicsPuppeteer.h">
-      <Filter>src\puppeteers</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsPuppeteer.h">
-      <Filter>src\puppeteers</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsEngine.h">
-      <Filter>src\physics</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsContactsListener.h">
-      <Filter>src\physics</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneObjectPuppeteers.h">
-      <Filter>src\puppeteers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src\delegate</Filter>
     </ClInclude>
-    <ClInclude Include="Pointer.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneObjectPuppet.h">
-      <Filter>src\puppets</Filter>
-    </ClInclude>
-    <ClInclude Include="BallPuppet.h">
-      <Filter>src\puppets</Filter>
-    </ClInclude>
-    <ClInclude Include="GroundPuppet.h">
-      <Filter>src\puppets</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainCommand.h">
+    <ClInclude Include="..\Classes\TerrainCommand.h">
       <Filter>src\commands</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainSegment.h">
-      <Filter>src\puppets\terrain</Filter>
+    <ClInclude Include="..\Classes\PhysicsEngine.h">
+      <Filter>src\physics\engine</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainSegmentData.h">
-      <Filter>src\puppets\terrain</Filter>
+    <ClInclude Include="..\Classes\PhysicsContactsListener.h">
+      <Filter>src\physics\listener</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SceneObjectPuppeteers.h">
+      <Filter>src\puppeteers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsPuppeteer.h">
+      <Filter>src\puppeteers\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NodePhysicsPuppeteer.h">
+      <Filter>src\puppeteers\node physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pointer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TerrainSegment.h">
+      <Filter>src\puppets\terrain segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TerrainSegmentData.h">
+      <Filter>src\puppets\terrain segment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SceneObjectPuppet.h">
+      <Filter>src\puppets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BallPuppet.h">
+      <Filter>src\puppets\ball</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GroundPuppet.h">
+      <Filter>src\puppets\ground</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SurfaceGenerator.h">
+      <Filter>src\puppets\terrain segment\generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainScene.h">
+      <Filter>src\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CarPuppet.h">
+      <Filter>src\puppets\car</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CarSetup.h">
+      <Filter>src\scenes\car setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CarSetupScene.h">
+      <Filter>src\scenes\car setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WheelPuppet.h">
+      <Filter>src\puppets\wheel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
