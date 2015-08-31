@@ -2,9 +2,12 @@
 
 USING_NS_CC;
 
-Ground* Ground::create()
+Ground* Ground::create(PhysicsEngine* engine)
 {
-	return Ground::createFromFile("groundFone.png");
+	auto ground = Ground::createFromFile("groundFone.png");
+	ground->SetEngine(engine);
+
+	return ground;
 }
 
 Pointer<GroundPuppeteer> Ground::CreatePuppeteer(PhysicsEngine* engine)
@@ -16,7 +19,7 @@ Pointer<GroundPuppeteer> Ground::CreatePuppeteer(PhysicsEngine* engine)
 	auto res = GroundPuppeteer::create(this, def, engine);
 	auto body = res->getBody();
 	b2PolygonShape rect;
-	rect.SetAsBox(this->getContentSize().width / (2.0 * engine->getPtmRatio()), this->getContentSize().height / (2.0 * engine->getPtmRatio()));
+	rect.SetAsBox(this->getContentSize().width / (2.0 * ptmRatio), this->getContentSize().height / (2.0 * ptmRatio));
 	b2FixtureDef fdef;
 	fdef.shape = &rect;
 	body->CreateFixture(&fdef);

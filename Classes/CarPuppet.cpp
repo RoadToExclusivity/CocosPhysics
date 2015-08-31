@@ -10,14 +10,18 @@ Car::Car()
 {	
 }
 
-Car* Car::create(CarSetup &setup)
+Car* Car::create(CarSetup &setup, PhysicsEngine* engine)
 {
-	auto newCar = Car::createFromFile("rect.png");
-	newCar->m_cl = setup.GetClearance();
-	if (newCar->m_wheel_left && newCar->m_wheel_right)
+	auto newCar = Car::createFromFile("car.png");
+	if (newCar)
 	{
-		newCar->m_wheel_left->SetWheel(setup.GetWheel());
-		newCar->m_wheel_right->SetWheel(setup.GetWheel());
+		newCar->m_cl = setup.GetClearance();
+		newCar->SetEngine(engine);
+		if (newCar->m_wheel_left && newCar->m_wheel_right)
+		{
+			newCar->m_wheel_left->SetWheel(setup.GetWheel());
+			newCar->m_wheel_right->SetWheel(setup.GetWheel());
+		}
 	}
 
 	return newCar;
@@ -37,20 +41,26 @@ void Car::SetEngine(PhysicsEngine* engine)
 	}
 }
 
+float Car::GetSpeed() const
+{
+	auto speed = GetBody()->GetLinearVelocity();
+	return sqrtf(speed.x * speed.x + speed.y * speed.y);
+}
+
 void Car::onEnter()
 {
 	if (m_wheel_left && m_wheel_right)
 	{
-		m_wheel_left->setPosition(m_wheel_left->getContentSize().width / 2.0, 
-								- m_wheel_left->getContentSize().height / 2.0 * m_wheel_left->getScaleY());
+		m_wheel_left->setPosition(m_wheel_left->getContentSize().width / 2.0 + LEFT_WHEEL_OFFSET_X,
+			HIGH_CLEARANCE_OFFSET_LEFT_WHEEL);
 
-		m_wheel_right->setPosition(getContentSize().width - m_wheel_right->getContentSize().width / 2.0,
-								-m_wheel_right->getContentSize().height / 2.0 * m_wheel_right->getScaleY());
+		m_wheel_right->setPosition(getContentSize().width - (m_wheel_right->getContentSize().width / 2.0 + RIGHT_WHEEL_OFFSET_X),
+			HIGH_CLEARANCE_OFFSET_RIGHT_WHEEL);
 
 		if (m_cl == ClearanceSetup::LOW_CLEARANCE)
 		{
-			m_wheel_left->setPositionY(m_wheel_left->getPositionY() + 10);
-			m_wheel_right->setPositionY(m_wheel_right->getPositionY() + 10);
+			m_wheel_left->setPositionY(m_wheel_left->getPositionY() + LOW_CLEARANCE_OFFSET);
+			m_wheel_right->setPositionY(m_wheel_right->getPositionY() + LOW_CLEARANCE_OFFSET);
 		}
 
 		this->addChild(m_wheel_left, -1);
@@ -67,7 +77,7 @@ void Car::ApplyForce(ForceDirection dir)
 	case STOP:
 		m_springLeft->EnableMotor(false);
 
-		m_wheel_left->GetBody()->SetLinearDamping(0);
+		m_wheel_left->GetBody()->SetLinearDamping(MIN_LINEAR_DAMPING);
 		break;
 	case LEFT:
 		m_springLeft->EnableMotor(true);
@@ -79,11 +89,44 @@ void Car::ApplyForce(ForceDirection dir)
 		m_springLeft->EnableMotor(true);
 		m_springLeft->SetMotorSpeed(-MAX_MOTOR_SPEED);
 
-		m_wheel_left->GetBody()->SetLinearDamping(0);
+		m_wheel_left->GetBody()->SetLinearDamping(MIN_LINEAR_DAMPING);
 		break;
 	default:
 		break;
 	}
+}
+
+void Car::AddPoints(unsigned int count)
+{
+	m_bonusPoints += count;
+}
+
+unsigned int Car::GetPoints() const
+{
+	return m_bonusPoints;
+}
+
+void Car::SetContactWithTerrain(bool hasContact)
+{
+	m_terrainContact = hasContact;
+}
+
+bool Car::IsContactWithTerrain() const
+{
+	return m_terrainContact;
+}
+
+b2WheelJoint* Car::CreateWheelJoint(b2Body* body, Wheel* wheel, bool isEngineTurnOn)
+{
+	b2WheelJointDef	wheelDef;
+	wheelDef.Initialize(body, wheel->GetBody(), wheel->GetBody()->GetPosition(), b2Vec2(0, 1));
+	wheelDef.enableMotor = isEngineTurnOn;
+	wheelDef.motorSpeed = 0;
+	wheelDef.maxMotorTorque = MAX_MOTOR_TORQUE;
+	wheelDef.dampingRatio = WHEEL_DAMPING_RATIO;
+	wheelDef.frequencyHz = m_cl == ClearanceSetup::HIGH_CLEARANCE ? HIGH_CLEARANCE_FREQ : LOW_CLEARANCE_FREQ;
+
+	return (b2WheelJoint*)body->GetWorld()->CreateJoint(&wheelDef);
 }
 
 Pointer<CarPuppeteer> Car::CreatePuppeteer(PhysicsEngine* engine)
@@ -95,34 +138,31 @@ Pointer<CarPuppeteer> Car::CreatePuppeteer(PhysicsEngine* engine)
 
 	auto res = CarPuppeteer::create(this, def, engine);
 	auto body = res->getBody();
+
 	b2PolygonShape shape;
-	shape.SetAsBox(this->getContentSize().width / (2.0 * ptmRatio), this->getContentSize().height / (2.0 * ptmRatio));
+	int count = 8;
+	const b2Vec2 vertices[] = 
+	{
+		b2Vec2(-107.5 / ptmRatio, -31.0 / ptmRatio),
+		b2Vec2(-107.5 / ptmRatio, 17.0 / ptmRatio),
+		b2Vec2(-87.5 / ptmRatio, 13.0 / ptmRatio),
+		b2Vec2(-37.5 / ptmRatio, 31.0 / ptmRatio),
+		b2Vec2(2.5 / ptmRatio, 31.0 / ptmRatio),
+		b2Vec2(25.5 / ptmRatio, 13.0 / ptmRatio),
+		b2Vec2(107.5 / ptmRatio, 4.0 / ptmRatio),
+		b2Vec2(107.5 / ptmRatio, -31.0 / ptmRatio)
+	};
+	shape.Set(vertices, count);
 
 	b2FixtureDef fdef;
 	fdef.shape = &shape;
-	fdef.density = 1.0f;
-	fdef.friction = 0.9f;
+	fdef.density = CAR_BODY_DENSITY;
+	fdef.friction = CAR_BODY_FRICTION;
 	fdef.restitution = 0;
 	body->CreateFixture(&fdef);	
-	
-	b2WheelJointDef	wheelDef;
-	wheelDef.Initialize(body, m_wheel_left->GetBody(), m_wheel_left->GetBody()->GetPosition(), b2Vec2(0, 1));
-	wheelDef.enableMotor = true;
-	wheelDef.motorSpeed = 0;
-	wheelDef.maxMotorTorque = MAX_MOTOR_TORQUE;
-	wheelDef.dampingRatio = 0.7f;
-	wheelDef.frequencyHz = m_cl == ClearanceSetup::HIGH_CLEARANCE ? 4.0 : 40.0;
 
-	m_springLeft = (b2WheelJoint*)body->GetWorld()->CreateJoint(&wheelDef);
-
-	wheelDef.Initialize(body, m_wheel_right->GetBody(), m_wheel_right->GetBody()->GetPosition(), b2Vec2(0, 1));
-	wheelDef.enableMotor = false;
-	wheelDef.motorSpeed = 0;
-	wheelDef.maxMotorTorque = MAX_MOTOR_TORQUE;
-	wheelDef.dampingRatio = 0.7f;
-
-	m_springRight = (b2WheelJoint*)body->GetWorld()->CreateJoint(&wheelDef);
-	//body->SetLinearVelocity(b2Vec2(1, 1));
+	m_springLeft = CreateWheelJoint(body, m_wheel_left, true);
+	m_springRight = CreateWheelJoint(body, m_wheel_right, false);
 
 	return Pointer<CarPuppeteer>(res);
 }

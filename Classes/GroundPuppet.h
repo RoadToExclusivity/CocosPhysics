@@ -7,7 +7,7 @@
 class Ground : public SceneObjectPuppet < Ground, GroundPuppeteer >
 {
 public:
-	static Ground* create();
+	static Ground* create(PhysicsEngine*);
 
 protected:
 	Pointer<GroundPuppeteer> CreatePuppeteer(PhysicsEngine*) override;

@@ -43,12 +43,6 @@
     <Filter Include="src\puppets\terrain segment">
       <UniqueIdentifier>{aaf90311-e7d4-4e1c-94ad-f5db69d6fa6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\puppets\ball">
-      <UniqueIdentifier>{3590cc66-c347-4551-8ace-ca223e902b9a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\puppets\ground">
-      <UniqueIdentifier>{4b369a6d-669c-4679-b1dc-8766f533bfd6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\puppets\terrain segment\generator">
       <UniqueIdentifier>{88c9c827-0d4d-419e-8c06-2b88ccd9b628}</UniqueIdentifier>
     </Filter>
@@ -60,6 +54,39 @@
     </Filter>
     <Filter Include="src\puppets\wheel">
       <UniqueIdentifier>{de78db24-18fa-4f3c-8c6b-4cc0edc1e3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\speedometer">
+      <UniqueIdentifier>{1d5a2f42-cc60-48ed-b1f8-b72fc3d54735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scenes\game over">
+      <UniqueIdentifier>{096c3fdb-7884-4ca9-8f81-8c2458b94634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppeteers\bonus">
+      <UniqueIdentifier>{e6f2435f-45bd-4be4-8b0d-cb5629709c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\accelerator">
+      <UniqueIdentifier>{42de1f48-334f-4cbb-8fa7-146e5f38fd7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\bonus">
+      <UniqueIdentifier>{9acc0651-495a-406e-9c08-99eb51c7a9f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppeteers\car">
+      <UniqueIdentifier>{51adcbd8-1965-4490-9a8e-0ccae37239ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\terrain segment\ts data">
+      <UniqueIdentifier>{50d8e55d-1ab3-470a-82dd-d61eba51bdeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\car\setup">
+      <UniqueIdentifier>{46ea2e80-e3c7-4a95-b7b5-c021fe4c8910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scenes\main">
+      <UniqueIdentifier>{228466b9-9869-4c64-987c-6199497b10bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\bonus\position generator">
+      <UniqueIdentifier>{213dfd2a-19bd-4726-95a6-63436f026c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\puppets\test platform">
+      <UniqueIdentifier>{4b369a6d-669c-4679-b1dc-8766f533bfd6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -87,32 +114,50 @@
     <ClCompile Include="..\Classes\TerrainSegment.cpp">
       <Filter>src\puppets\terrain segment</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TerrainSegmentData.cpp">
-      <Filter>src\puppets\terrain segment</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BallPuppet.cpp">
-      <Filter>src\puppets\ball</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\GroundPuppet.cpp">
-      <Filter>src\puppets\ground</Filter>
+      <Filter>src\puppets\test platform</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SurfaceGenerator.cpp">
       <Filter>src\puppets\terrain segment\generator</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MainScene.cpp">
-      <Filter>src\scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CarPuppet.cpp">
       <Filter>src\puppets\car</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CarSetup.cpp">
-      <Filter>src\scenes\car setup</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CarSetupScene.cpp">
       <Filter>src\scenes\car setup</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\WheelPuppet.cpp">
       <Filter>src\puppets\wheel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Speedometer.cpp">
+      <Filter>src\puppets\speedometer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOverScene.cpp">
+      <Filter>src\scenes\game over</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BonusPuppeteer.cpp">
+      <Filter>src\puppeteers\bonus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Accelerator.cpp">
+      <Filter>src\puppets\accelerator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BonusPuppet.cpp">
+      <Filter>src\puppets\bonus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CarPuppeteer.cpp">
+      <Filter>src\puppeteers\car</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TerrainSegmentData.cpp">
+      <Filter>src\puppets\terrain segment\ts data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CarSetup.cpp">
+      <Filter>src\puppets\car\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainScene.cpp">
+      <Filter>src\scenes\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BonusPositionGenerator.cpp">
+      <Filter>src\puppets\bonus\position generator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,29 +191,17 @@
     <ClInclude Include="..\Classes\TerrainSegment.h">
       <Filter>src\puppets\terrain segment</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TerrainSegmentData.h">
-      <Filter>src\puppets\terrain segment</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\SceneObjectPuppet.h">
       <Filter>src\puppets</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BallPuppet.h">
-      <Filter>src\puppets\ball</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\GroundPuppet.h">
-      <Filter>src\puppets\ground</Filter>
+      <Filter>src\puppets\test platform</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SurfaceGenerator.h">
       <Filter>src\puppets\terrain segment\generator</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MainScene.h">
-      <Filter>src\scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CarPuppet.h">
       <Filter>src\puppets\car</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CarSetup.h">
-      <Filter>src\scenes\car setup</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CarSetupScene.h">
       <Filter>src\scenes\car setup</Filter>
@@ -176,10 +209,43 @@
     <ClInclude Include="..\Classes\WheelPuppet.h">
       <Filter>src\puppets\wheel</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Speedometer.h">
+      <Filter>src\puppets\speedometer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverScene.h">
+      <Filter>src\scenes\game over</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BonusPuppeteer.h">
+      <Filter>src\puppeteers\bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Accelerator.h">
+      <Filter>src\puppets\accelerator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BonusPuppet.h">
+      <Filter>src\puppets\bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CarPuppeteer.h">
+      <Filter>src\puppeteers\car</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TerrainSegmentData.h">
+      <Filter>src\puppets\terrain segment\ts data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CarSetup.h">
+      <Filter>src\puppets\car\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainScene.h">
+      <Filter>src\scenes\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BonusPositionGenerator.h">
+      <Filter>src\puppets\bonus\position generator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

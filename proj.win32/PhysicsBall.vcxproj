@@ -140,10 +140,15 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\Accelerator.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\BallPuppet.cpp" />
+    <ClCompile Include="..\Classes\BonusPositionGenerator.cpp" />
+    <ClCompile Include="..\Classes\BonusPuppet.cpp" />
+    <ClCompile Include="..\Classes\BonusPuppeteer.cpp" />
     <ClCompile Include="..\Classes\CarPuppet.cpp" />
+    <ClCompile Include="..\Classes\CarPuppeteer.cpp" />
     <ClCompile Include="..\Classes\CarSetup.cpp" />
+    <ClCompile Include="..\Classes\GameOverScene.cpp" />
     <ClCompile Include="..\Classes\MainScene.cpp" />
     <ClCompile Include="..\Classes\CarSetupScene.cpp" />
     <ClCompile Include="..\Classes\GroundPuppet.cpp" />
@@ -151,6 +156,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\PhysicsContactsListener.cpp" />
     <ClCompile Include="..\Classes\PhysicsEngine.cpp" />
     <ClCompile Include="..\Classes\PhysicsPuppeteer.cpp" />
+    <ClCompile Include="..\Classes\Speedometer.cpp" />
     <ClCompile Include="..\Classes\SurfaceGenerator.cpp" />
     <ClCompile Include="..\Classes\TerrainCommand.cpp" />
     <ClCompile Include="..\Classes\TerrainSegment.cpp" />
@@ -159,10 +165,15 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Accelerator.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\BallPuppet.h" />
+    <ClInclude Include="..\Classes\BonusPositionGenerator.h" />
+    <ClInclude Include="..\Classes\BonusPuppet.h" />
+    <ClInclude Include="..\Classes\BonusPuppeteer.h" />
     <ClInclude Include="..\Classes\CarPuppet.h" />
+    <ClInclude Include="..\Classes\CarPuppeteer.h" />
     <ClInclude Include="..\Classes\CarSetup.h" />
+    <ClInclude Include="..\Classes\GameOverScene.h" />
     <ClInclude Include="..\Classes\MainScene.h" />
     <ClInclude Include="..\Classes\CarSetupScene.h" />
     <ClInclude Include="..\Classes\GroundPuppet.h" />
@@ -173,6 +184,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Pointer.h" />
     <ClInclude Include="..\Classes\SceneObjectPuppet.h" />
     <ClInclude Include="..\Classes\SceneObjectPuppeteers.h" />
+    <ClInclude Include="..\Classes\Speedometer.h" />
     <ClInclude Include="..\Classes\SurfaceGenerator.h" />
     <ClInclude Include="..\Classes\TerrainCommand.h" />
     <ClInclude Include="..\Classes\TerrainSegment.h" />
@@ -194,6 +206,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

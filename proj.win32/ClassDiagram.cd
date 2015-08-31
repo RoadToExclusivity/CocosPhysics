@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pointer&lt;T&gt;" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAAAEAAAAAgAAAAAAAAAAAAAgAABAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\Pointer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarSetupScene" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAKAggBAJAAgCQAIQAQABAAAACAAAIAABAAAACEQCA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarSetupScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverScene" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIAAAAAJABgCEAAAAAABAAgAAAgAsAAABAAACAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\GameOverScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainScene" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iQILgwAABhgCgAACAAAAgBECAgJAMAokgABAAAGUIAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\MainScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObjectPuppeteer&lt;Parent, T, ...Types&gt;" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppeteers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BallPuppeteer" Collapsed="true">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppeteers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GroundPuppeteer" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppeteers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WheelPuppeteer" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppeteers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TerrainPuppeteer" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppeteers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicsContactInfo" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAQAAAAAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\PhysicsPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicsPuppeteer" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABAAAAQAAAACAAAAAgAAAAABQ4gAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\PhysicsPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NodePhysicsPuppeteer" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAgAAAAAABogAABAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\NodePhysicsPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BonusPuppeteer" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAABAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\BonusPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarPuppeteer" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicsEngine" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAIAAQAAAAABJAwAAAAiAAAAIAAAAADRAAAAAgA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\PhysicsEngine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicsContactsListener" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\PhysicsContactsListener.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppDelegate" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAACAAQAAAEAAAAAAAAAAAAk=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\AppDelegate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneObjectPuppet&lt;T, Puppeteer&gt;" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAAAAAAAAAAAAAAABAAAAAAAAEAQAAAAkCAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SceneObjectPuppet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TerrainSegment" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QhIQGAgAAAAAAABAUAIIABIAAUAAAAAoCBJAAQCgAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\TerrainSegment.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurfaceGenerator" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAIAEJgACAAAAAIIAAAAwAAAAAAAAoAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SurfaceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Car" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIEABAAQQAAABAQAQAIAAAAEBAAkEQABAAACCAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarPuppet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarSetup" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAHEAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarSetup.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wheel" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAEBAABAAAQAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\WheelPuppet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Speedometer" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAAAAAAAAAAAACQAAAAAAAAAAAEAAgAAABAAAEEABA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\Speedometer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Accelerator" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAgAACABAAAAgAAAAAAABCAIABAAAAEAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\Accelerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bonus" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAgAAAAAAABAAAAAAEAAABAAAAAEAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\BonusPuppet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BonusPositionGenerator" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAACAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAgAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\BonusPositionGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ground" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\GroundPuppet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TerrainCommand" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAAgAAAAAAAAQAAEQAAgAAAAAIIAAAAAAAAAEAg=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\TerrainCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="SurfaceAdditionalInfo" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAE=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SurfaceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TerrainSegmentData" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAABAAAAAABAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\TerrainSegmentData.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="BonusType" Collapsed="true">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQCA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\BonusPuppeteer.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SurfaceType" Collapsed="true">
+    <Position X="20" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAAAAAAAAAAAAAAAAAAAAAAAADA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\SurfaceGenerator.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ForceDirection" Collapsed="true">
+    <Position X="18.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarPuppet.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WheelSetup" Collapsed="true">
+    <Position X="14.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarSetup.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ClearanceSetup" Collapsed="true">
+    <Position X="16.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Code\cocos\PhysicsBall\PhysicsBall\Classes\CarSetup.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

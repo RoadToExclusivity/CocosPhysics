@@ -15,5 +15,13 @@ protected:
 
 private:
 	WheelSetup m_wheelType;
+
+	static const float BIG_WHEEL_SCALE;
+	static const float SMALL_WHEEL_SCALE;
+
+	static const float DENSITY;
+	static const float FRICTION;
+	static const float RESTITUTION;
+	static const float LINEAR_DAMPING;
 };
 

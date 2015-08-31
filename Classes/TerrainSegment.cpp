@@ -5,10 +5,11 @@ USING_NS_CC;
 
 static const int SEGMENT_LINE_TENSION = 0.7;
 
-TerrainSegment* TerrainSegment::create(const TerrainSegmentData &data, const Size &contentSize, PhysicsEngine* engine)
+TerrainSegment* TerrainSegment::create(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info, 
+										const Size &contentSize, PhysicsEngine* engine)
 {
     auto ret = new TerrainSegment(engine);
-    if (engine && ret->initWithData(data, contentSize))
+    if (engine && ret->initWithData(data, info, contentSize))
         ret->autorelease();
     else
         CC_SAFE_DELETE(ret);
@@ -54,10 +55,10 @@ Rect TerrainSegment::boundingBox()
 }
 
 /// @param data Used as height map for this segment.
-bool TerrainSegment::initWithData(const TerrainSegmentData &data, const Size &contentSize)
+bool TerrainSegment::initWithData(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info, const Size &contentSize)
 {
     mData = data;
-	mTexture = TextureCache::getInstance()->addImage("terrainSegment.png");
+	mTexture = TextureCache::getInstance()->addImage("terrain.png");
     if (!mTexture)
         return false;
 
@@ -65,7 +66,7 @@ bool TerrainSegment::initWithData(const TerrainSegmentData &data, const Size &co
     setContentSize(contentSize);
 
     std::vector<V2F_C4B_T2F> vertexes;
-    fillVerticies(data, vertexes);
+    fillVerticies(data, info, vertexes);
     initOpenGL(vertexes);
     return true;
 }
@@ -74,6 +75,7 @@ Point TerrainSegment::calculateSurfacePoint(const TerrainSegmentData &data, floa
 {
     Size contentSize = getContentSize();
 
+	positionX /= contentSize.width;
     float normalizedDelta = positionX * TerrainSegmentData::SEGMENT_LENGTH;
 
     int pi = int(normalizedDelta);
@@ -84,8 +86,9 @@ Point TerrainSegment::calculateSurfacePoint(const TerrainSegmentData &data, floa
     Point pp2(0, data.getKeypointAtIndex(pi + 1));
     Point pp3(0, data.getKeypointAtIndex(pi + 2));
     Point point = ccCardinalSplineAt(pp0, pp1, pp2, pp3, SEGMENT_LINE_TENSION, dtFraq);
+	point.y *= contentSize.height;
 
-    return point;
+	return point;
 }
 
 float TerrainSegment::getSurfaceY(float positionX) const
@@ -95,7 +98,7 @@ float TerrainSegment::getSurfaceY(float positionX) const
 }
 
 /// Fills array of verticies for triangle strip using interpolation.
-void TerrainSegment::fillVerticies(const TerrainSegmentData &data, std::vector<V2F_C4B_T2F> &vertexes)
+void TerrainSegment::fillVerticies(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info, std::vector<V2F_C4B_T2F> &vertexes)
 {
     Size contentSize = getContentSize();
     const int lastChunkIndex = contentSize.width;
@@ -104,6 +107,7 @@ void TerrainSegment::fillVerticies(const TerrainSegmentData &data, std::vector<V
     V2F_C4B_T2F vertex;
     vertex.colors = {255, 255, 255, 255};
 
+	float additionalMaxHeight = (info.max_point - info.min_point) * contentSize.height;
     mMaximumHeight = 0;
     mMinumumHeight = UINT_MAX;
 
@@ -121,11 +125,11 @@ void TerrainSegment::fillVerticies(const TerrainSegmentData &data, std::vector<V
         Point pp3(0, data.getKeypointAtIndex(pi + 2));
         Point point = ccCardinalSplineAt(pp0, pp1, pp2, pp3, SEGMENT_LINE_TENSION, dtFraq);
         point.x = dt * contentSize.width;
-		point.y = (0.0 + point.y) * contentSize.height;
+		point.y = point.y * contentSize.height;
         if (point.y > mMaximumHeight)
             mMaximumHeight = point.y;
-        if (point.y - contentSize.height < mMinumumHeight)
-            mMinumumHeight = point.y - contentSize.height;
+		if (point.y - (contentSize.height + additionalMaxHeight) < mMinumumHeight)
+			mMinumumHeight = point.y - (contentSize.height + additionalMaxHeight);
 
         // top vertex
         vertex.vertices.x = point.x;
@@ -134,7 +138,7 @@ void TerrainSegment::fillVerticies(const TerrainSegmentData &data, std::vector<V
         vertexes.push_back(vertex);
 
         // turn top vertex into bottom
-        vertex.vertices.y -= contentSize.height;
+		vertex.vertices.y -= (contentSize.height + additionalMaxHeight);
         vertex.texCoords = {dt, 1};
         vertexes.push_back(vertex);
     }

@@ -1,6 +1,7 @@
 #include "PhysicsEngine.h"
 #include "PhysicsPuppeteer.h"
 #include "PhysicsContactsListener.h"
+#include "WheelPuppet.h"
 
 USING_NS_CC;
 
@@ -63,13 +64,52 @@ void PhysicsEngine::tick(float dt)
     mBodiesToDelete.clear();
 }
 
-Point PhysicsEngine::getBodyPosition(b2Body *body) const
+Point PhysicsEngine::getGlobalBodyPosition(b2Body *body) const
 {
     const b2Vec2 &pos = body->GetPosition();
 	return Point(mPixelsPerMeter * pos.x, mPixelsPerMeter * pos.y);
 }
 
-float PhysicsEngine::getBodyRotation(b2Body *body) const
+Vec2 PhysicsEngine::getLocalBodyPosition(b2Body *body, Node* node) const
+{
+	auto &pos = getGlobalBodyPosition(body);
+	Mat4 tmp = getNodeToLocalTransform(node);
+	Vec3 vec3(pos.x, pos.y, 0);
+	Vec3 ret;
+	tmp.transformPoint(vec3, &ret);
+	return Vec2(ret.x, ret.y);
+}
+
+Mat4 PhysicsEngine::getNodeToLocalTransform(Node* node) const
+{
+	Mat4 t;
+	for (Node *p = node->getParent(); p != nullptr && p != m_parent; p = p->getParent())
+	{
+		t = p->getNodeToParentTransform() * t;
+	}
+
+	return t.getInversed();
+}
+
+float PhysicsEngine::getLocalBodyRotation(b2Body *body, cocos2d::Node* node) const
+{
+	float rotation = body->GetAngle();
+	Mat4 tmp = getNodeToLocalTransform(node);
+	Vec3 rot(cosf(rotation), sinf(rotation), 0);
+	Vec3 ret;
+	tmp.transformVector(rot, &ret);
+	ret.normalize();
+	float f = getCocosAngleFromBox2d(atan2(ret.y, ret.x));
+
+	if (dynamic_cast<Wheel*>(node) != nullptr)
+	{
+		f = f;
+	}
+
+	return f;
+}
+
+float PhysicsEngine::getGlobalBodyRotation(b2Body *body) const
 {
     return -1 * CC_RADIANS_TO_DEGREES(body->GetAngle());
 }

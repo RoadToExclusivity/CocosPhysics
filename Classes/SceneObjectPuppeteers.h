@@ -26,10 +26,6 @@ class GroundPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, Grou
 {
 };
 
-class CarPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, CarPuppeteer, cocos2d::Node*, const b2BodyDef&, PhysicsEngine* >
-{
-};
-
 class WheelPuppeteer : public SceneObjectPuppeteer < NodePhysicsPuppeteer, WheelPuppeteer, cocos2d::Node*, const b2BodyDef&, PhysicsEngine* >
 {
 };

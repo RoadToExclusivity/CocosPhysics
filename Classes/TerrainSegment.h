@@ -6,11 +6,13 @@
 #include "PhysicsEngine.h"
 #include "Pointer.h"
 #include "TerrainCommand.h"
+#include "SurfaceGenerator.h"
 
 class TerrainSegment : public cocos2d::Node
 {
 public:
-	static TerrainSegment *create(const TerrainSegmentData &data, const cocos2d::Size &contentSize, PhysicsEngine* engine);
+	static TerrainSegment *create(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info, 
+								 const cocos2d::Size &contentSize, PhysicsEngine* engine);
 
 	TerrainSegment(PhysicsEngine* engine);
 	void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4& transform, uint32_t flags) override;
@@ -22,8 +24,8 @@ public:
     float getSurfaceY(float positionX) const;
 
 private:
-    bool initWithData(const TerrainSegmentData &data, const cocos2d::Size &contentSize);
-    void fillVerticies(const TerrainSegmentData &data,
+	bool initWithData(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info, const cocos2d::Size &contentSize);
+	void fillVerticies(const TerrainSegmentData &data, const SurfaceAdditionalInfo& info,
                        std::vector<cocos2d::V2F_C4B_T2F> &vertexes);
 	void initOpenGL(const std::vector<cocos2d::V2F_C4B_T2F> &vertexes);
     void initBox2DBody();

@@ -15,14 +15,17 @@ public:
     /// Updates physics world.
     void tick(float dt);
 
-    cocos2d::Point getBodyPosition(b2Body *body) const;
-    float getBodyRotation(b2Body *body) const;
+    cocos2d::Point getGlobalBodyPosition(b2Body *body) const;
+	cocos2d::Vec2 getLocalBodyPosition(b2Body *body, cocos2d::Node*) const;
+	float getLocalBodyRotation(b2Body *body, cocos2d::Node*) const;
+    float getGlobalBodyRotation(b2Body *body) const;
     float getCocosAngleFromBox2d(float angle) const;
     float getBox2dAngleFromCocos(float angle) const;
     int getPtmRatio() const;
 
     b2Vec2 getNodePosition(cocos2d::Node *node) const;
     b2Vec2 getNodePointPosition(cocos2d::Node *node, const cocos2d::Point &point) const;
+	cocos2d::Mat4 getNodeToLocalTransform(cocos2d::Node*) const;
 
 private:
 	b2World *mWorld;
